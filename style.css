@@ -1,0 +1,118 @@
+html {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  color: white;
+  margin: 0;
+  padding: 0;
+  background: black;
+  margin: auto;
+  display: grid;
+  grid-template: 1fr min-content/1fr; 
+  height: 100%;
+}
+
+.video-container {
+  top:0;
+  left: 0;
+}
+
+#video {
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.camera-controls{
+  position: fixed;
+  background-color: black;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 1em;
+}
+
+#canvas {
+  display: none;
+}
+
+#photo {
+  border-radius: 100%;
+  width: 70px;
+  height: 70px;
+  align-self: center;
+  justify-self: center;
+}
+
+button {
+  outline: none;  
+  color: white;
+  opacity: 1;
+  background: transparent;
+  border: solid 2px #fff;
+  padding: 0;
+  text-shadow: 0px 0px 4px black;
+  background-position: center center;
+  background-repeat: no-repeat;
+  pointer-events: auto;
+}
+
+.snap {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-self: center;
+  justify-self: center;
+}
+
+#snap:active {
+  background-color: #fff;
+}
+
+#flip {
+  background-image: url('https://cdn.glitch.com/f5e9ac2c-d9fb-4f72-8970-ba1907ab0a95%2Fflip_camera.svg?v=1626905989989');
+  background-size: cover;
+}
+
+
+.msg {
+  grid-row: 1;
+  font-size: 18px;
+  
+  grid-column: 1 / 4;
+  justify-self: center;
+  display:none;
+}
+
+
+
+@media (device-posture: folded) {
+  
+   body {
+     display: flex;
+     flex-flow: column nowrap;
+   }
+  
+  
+  .video-container{
+    height: 100vw;
+    width: 100vw;
+  }
+  
+  #video{
+    height:100%;
+  }
+  
+  
+  .msg {
+    display:block;
+    margin: 5em;
+  }
+}
